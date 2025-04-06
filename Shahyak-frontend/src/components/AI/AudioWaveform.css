@@ -1,0 +1,127 @@
+/* Audio waveform animation styles */
+@keyframes wave {
+  0% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1.2); }
+  100% { transform: scaleY(0.5); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.6; transform: scale(0.9); }
+}
+
+.audio-waveform-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  margin: var(--space-md) 0;
+  background-color: var(--bg-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.audio-waveform-container:hover {
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.waveform {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.waveform-bar {
+  background-color: var(--primary-light);
+  width: 4px;
+  height: 18px;
+  margin: 0 3px;
+  border-radius: 2px;
+  transform-origin: center;
+  transition: height var(--transition-fast), background-color var(--transition-fast);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.waveform.recording .waveform-bar {
+  background-color: var(--primary-color);
+}
+
+.waveform.playing .waveform-bar {
+  background-color: var(--primary-light);
+  transition: all 0.2s ease;
+}
+
+.waveform.playing .waveform-bar.active {
+  background-color: var(--primary-color);
+  height: 28px;
+  box-shadow: 0 0 8px rgba(139, 0, 255, 0.3);
+}
+
+.waveform.recording .waveform-bar:nth-child(1) { animation: wave 1.0s ease-in-out infinite 0.0s; }
+.waveform.recording .waveform-bar:nth-child(2) { animation: wave 1.0s ease-in-out infinite 0.1s; }
+.waveform.recording .waveform-bar:nth-child(3) { animation: wave 1.0s ease-in-out infinite 0.2s; }
+.waveform.recording .waveform-bar:nth-child(4) { animation: wave 1.0s ease-in-out infinite 0.3s; }
+.waveform.recording .waveform-bar:nth-child(5) { animation: wave 1.0s ease-in-out infinite 0.4s; }
+.waveform.recording .waveform-bar:nth-child(6) { animation: wave 1.0s ease-in-out infinite 0.5s; }
+.waveform.recording .waveform-bar:nth-child(7) { animation: wave 1.0s ease-in-out infinite 0.6s; }
+.waveform.recording .waveform-bar:nth-child(8) { animation: wave 1.0s ease-in-out infinite 0.7s; }
+.waveform.recording .waveform-bar:nth-child(9) { animation: wave 1.0s ease-in-out infinite 0.8s; }
+.waveform.recording .waveform-bar:nth-child(10) { animation: wave 1.0s ease-in-out infinite 0.9s; }
+.waveform.recording .waveform-bar:nth-child(11) { animation: wave 1.0s ease-in-out infinite 1.0s; }
+.waveform.recording .waveform-bar:nth-child(12) { animation: wave 1.0s ease-in-out infinite 0.9s; }
+.waveform.recording .waveform-bar:nth-child(13) { animation: wave 1.0s ease-in-out infinite 0.8s; }
+.waveform.recording .waveform-bar:nth-child(14) { animation: wave 1.0s ease-in-out infinite 0.7s; }
+.waveform.recording .waveform-bar:nth-child(15) { animation: wave 1.0s ease-in-out infinite 0.6s; }
+.waveform.recording .waveform-bar:nth-child(16) { animation: wave 1.0s ease-in-out infinite 0.5s; }
+.waveform.recording .waveform-bar:nth-child(17) { animation: wave 1.0s ease-in-out infinite 0.4s; }
+.waveform.recording .waveform-bar:nth-child(18) { animation: wave 1.0s ease-in-out infinite 0.3s; }
+.waveform.recording .waveform-bar:nth-child(19) { animation: wave 1.0s ease-in-out infinite 0.2s; }
+.waveform.recording .waveform-bar:nth-child(20) { animation: wave 1.0s ease-in-out infinite 0.1s; }
+
+.recording-status, .playing-status {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-sm);
+}
+
+.recording-status {
+  color: var(--error);
+}
+
+.playing-status {
+  color: var(--primary-color);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.status-dot.recording {
+  background-color: var(--error);
+}
+
+.status-dot.playing {
+  background-color: var(--primary-color);
+}

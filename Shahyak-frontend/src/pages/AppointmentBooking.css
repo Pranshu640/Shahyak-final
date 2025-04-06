@@ -1,0 +1,444 @@
+.page-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.appointment-page-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.appointment-page-header h1 {
+  margin: 0;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #3498db;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #f0f7fd;
+}
+
+.appointment-doctor-info {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid #3498db;
+}
+
+.appointment-doctor-info h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.doctor-specialization {
+  color: #555;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.doctor-experience {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.doctor-fee {
+  color: #27ae60;
+  font-weight: 500;
+  margin: 0.5rem 0 0;
+}
+
+/* Progress Steps */
+.appointment-booking-progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.appointment-booking-progress::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #e0e0e0;
+  z-index: 1;
+}
+
+.progress-step {
+  position: relative;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #777;
+  z-index: 2;
+  border: 1px solid #e0e0e0;
+}
+
+.progress-step.active {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+  font-weight: 500;
+}
+
+/* Appointment Steps */
+.appointment-step {
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.step-header h3 {
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.back-step-btn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.back-step-btn:hover {
+  background-color: #eee;
+}
+
+/* Date Selection */
+.date-selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.calendar-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.calendar-container input[type="date"] {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.date-instructions {
+  flex: 1;
+  min-width: 300px;
+}
+
+.working-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.working-day {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.working-day:last-child {
+  border-bottom: none;
+}
+
+.day {
+  font-weight: 500;
+  color: #555;
+}
+
+.hours {
+  color: #666;
+}
+
+/* Time Slots */
+.selected-date {
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #555;
+  background-color: #e8f4fd;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+
+.time-slots-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.time-slot {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.time-slot:hover {
+  background-color: #eef5ff;
+  border-color: #3498db;
+}
+
+.time-slot.selected {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+  font-weight: 500;
+}
+
+.no-slots-message {
+  text-align: center;
+  padding: 2rem;
+  color: #777;
+}
+
+/* Appointment Details */
+.appointment-summary {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.appointment-summary h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.75rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.summary-item span:first-child {
+  font-weight: 500;
+  color: #555;
+}
+
+.summary-item span:last-child {
+  color: #333;
+}
+
+/* Form */
+.appointment-form {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.login-notice {
+  background-color: #fff8e1;
+  border-left: 4px solid #ffc107;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+.book-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.book-btn:hover {
+  background-color: #2980b9;
+}
+
+.book-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Success Message */
+.appointment-success {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.appointment-success h2 {
+  color: #27ae60;
+  margin-bottom: 1.5rem;
+}
+
+.appointment-success p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.primary-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Loading and Error States */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #777;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .appointment-page-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  
+  .appointment-booking-progress {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .appointment-booking-progress::before {
+    display: none;
+  }
+  
+  .progress-step {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .appointment-page-container {
+    padding: 1rem;
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .appointment-step {
+    padding: 1rem;
+  }
+}

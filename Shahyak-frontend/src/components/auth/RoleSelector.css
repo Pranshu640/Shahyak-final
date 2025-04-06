@@ -1,0 +1,88 @@
+.role-selector {
+  margin-bottom: 2rem;
+}
+
+.role-selector h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #444;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.role-options {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .role-options {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.role-option {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(110, 142, 251, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.role-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(110, 142, 251, 0.15);
+  border-color: rgba(110, 142, 251, 0.3);
+}
+
+.role-option.selected {
+  background: linear-gradient(135deg, rgba(110, 142, 251, 0.1), rgba(167, 119, 227, 0.1));
+  border-color: #6e8efb;
+  box-shadow: 0 8px 20px rgba(110, 142, 251, 0.2);
+}
+
+.role-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.client-icon {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+}
+
+.doctor-icon {
+  background: linear-gradient(135deg, #a777e3, #6e8efb);
+  color: white;
+}
+
+.role-option h4 {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.role-option p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.role-option.selected h4 {
+  color: #6e8efb;
+}
