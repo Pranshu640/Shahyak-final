@@ -19,7 +19,7 @@ def gtts_tts_and_play(input_text, output_filepath="gtts_output.mp3"):
 
 def text_to_speech_with_elevenlabs(input_text, output_filepath="elevenlabs_output.mp3", api_key=None):
     # Use provided API key or fallback to environment variable
-    ELEVENLABS_API_KEY = "sk_db287485a4d3620f7da09b81d942a36efc1ee0c243ac46a5"
+    ELEVENLABS_API_KEY = api_key
     client = ElevenLabs(api_key=ELEVENLABS_API_KEY)
     audio = client.generate(
         text=input_text,
